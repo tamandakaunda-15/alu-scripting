@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 # Coomand line arguments
-input_string = ARGV[0]
+input_string = ARGV[0] || "Neha loves School, that is why she is a School mentor :)"
 
 # Define the pattern of the regular expression
 pattern = /School/
