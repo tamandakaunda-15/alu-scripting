@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-#A  python function that queries the Reddit API
+"""A  python function that queries the Reddit API"""
 import requests
 
 def number_of_subscribers(subreddit):
@@ -17,3 +17,5 @@ def number_of_subscribers(subreddit):
     except Exception as e:
         print(f"An error occurred: {e}")
         return 0
+     results = response.json().get("data")
+    return results.get("subscribers")
