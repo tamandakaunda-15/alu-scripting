@@ -17,5 +17,5 @@ def number_of_subscribers(subreddit):
     except Exception as e:
         print(f"An error occurred: {e}")
         return 0
-     results = response.json().get("data")
-    return results.get("subscribers")
+        results = response.json().get("data")
+        return results.get("subscribers")
