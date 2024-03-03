@@ -20,8 +20,7 @@ def top_ten(subreddit):
             [print(c.get("data").get("title")) for c in results.get("children")]
     else:
         print("Error: Failed to retrieve data from Reddit.")
-        return None 
-
+        return None
     if response.status_code == 404:
         print("None")
         return
