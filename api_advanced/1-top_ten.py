@@ -14,6 +14,14 @@ def top_ten(subreddit):
     }
     response = requests.get(url, headers=headers, params=params,
                             allow_redirects=False)
+    if response.status_code == 200: 
+        results = response.json().get("data")
+        if results:  
+            [print(c.get("data").get("title")) for c in results.get("children")]
+    else:
+        print("Error: Failed to retrieve data from Reddit.")
+        return None 
+
     if response.status_code == 404:
         print("None")
         return
