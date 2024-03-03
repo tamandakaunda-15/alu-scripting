@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+"""Function to query a list of all hot posts on a given Reddit subreddit."""
 import requests
 
 def recurse(subreddit, hot_lists=[], after=None, limit=10):
@@ -14,7 +16,7 @@ def recurse(subreddit, hot_lists=[], after=None, limit=10):
                 hot_list.append(child['data']['title'])
             after = data['data']['after']
             if after:
-                return recurse(subreddit, hot_list, after)
+                returnirecurse(subreddit, hot_list, after)
             else:
                 return hot_list
         else:
